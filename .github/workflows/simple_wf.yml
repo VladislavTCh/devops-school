@@ -9,7 +9,7 @@ on:
         default: 'type smth'
 jobs:
 
-    TIMESTAMP&Input:
+    TIMESTAMP_Input:
         runs-on: ubuntu-latest
 
         steps:
