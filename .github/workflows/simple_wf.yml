@@ -3,6 +3,11 @@ name: Simple Workflow
 on:
     workflow_dispatch:
 
+      inputs:
+      environment:
+        description: 'Provide some input for testing'     
+        required: false
+        default: 'type smth here or do not'
 jobs:
 
     TIMESTAMP:
