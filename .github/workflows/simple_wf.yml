@@ -19,6 +19,8 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
+        - name: showing the directiry test
+          run: ls -lah /home/runner/work/devops-school/devops-school/
         - name: Giving permissions
           run: |
             chmod 0775 /home/runner/work/devops-school/devops-school/log.txt
