@@ -1,11 +1,15 @@
-name: Simple Workflow
+name: HomeTask Workflow
 
 on:
     workflow_dispatch:
-
+     inputs:
+      userinput:
+        description: 'Provide some input'     
+        required: false
+        default: 'type smth'
 jobs:
 
-    TIMESTAMP:
+    TIMESTAMP_Input:
         runs-on: ubuntu-latest
 
         steps:
@@ -15,8 +19,11 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
-        - name: 1.3 DOWNLOAD ARTIFACT
+        - name: 1.3 ADDING USER INPUT
+          run:  |
+           sudo bash -c 'echo "   Userinput: ${{ github.event.inputs.userinput }}" >> /home/runner/work/devops-school/devops-school/log.txt'
+        - name: 1.4 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
-              name: log.md
-              path: /home/runner/work/devops-school/devops-school/log.md
+              name: log.txt
+              path: /home/runner/work/devops-school/devops-school/log.txt
