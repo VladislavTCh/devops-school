@@ -23,6 +23,7 @@ jobs:
           run: ls -lah /home/runner/work/devops-school/devops-school/
         - name: Giving permissions
           run: |
+            su
             chmod 0775 /home/runner/work/devops-school/devops-school/log.txt
         - name: Adding input
           run:  |
