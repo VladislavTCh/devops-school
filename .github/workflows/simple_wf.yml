@@ -2,8 +2,19 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
-
+     inputs:
+      environment:
+        description: 'Provide some input'     
+        required: false
+        default: 'type smth'
 jobs:
+
+    printInputs:
+        runs-on: ubuntu-latest
+        steps:
+        - run: |
+                echo "Env: ${{ github.event.inputs.environment }}" 
+                echo "Branch: ${{ github.event.inputs.branch }}"
 
     TIMESTAMP:
         runs-on: ubuntu-latest
