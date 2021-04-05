@@ -25,5 +25,5 @@ jobs:
               name: log.txt
               path: /home/runner/work/devops-school/devops-school/log.txt
         - name: Adding input
-              run: |
-                echo "Env: ${{ github.event.inputs.environment }}" >> /home/runner/work/devops-school/devops-school/log.txt
+          run:  |
+                echo "Userinput: ${{ github.event.inputs.userinput }}" >> /home/runner/work/devops-school/devops-school/log.txt
