@@ -3,7 +3,7 @@ name: Simple Workflow
 on:
     workflow_dispatch:
      inputs:
-      environment:
+      userinput:
         description: 'Provide some input'     
         required: false
         default: 'type smth'
@@ -24,5 +24,5 @@ jobs:
           with:
               name: log.txt
               path: /home/runner/work/devops-school/devops-school/log.txt
-              run:      |
-                echo "Env: ${{ github.event.inputs.environment }}"  >> /home/runner/work/devops-school/devops-school/log.txt
+              run: |
+                echo "Env: ${{ github.event.inputs.environment }}" >> /home/runner/work/devops-school/devops-school/log.txt
